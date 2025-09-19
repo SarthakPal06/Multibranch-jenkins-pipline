@@ -15,8 +15,8 @@ pipeline {
             steps {
                 // Remove existing container if exists
                 sh 'docker rm -f myapp_dev || true'
-                // Run new container on port 8082
-                sh 'docker run -d -p 8082:80 --name myapp_dev myapp:dev'
+                // Run new container on port 8083
+                sh 'docker run -d -p 8083:80 --name myapp_dev myapp:dev'
             }
         }
     }
