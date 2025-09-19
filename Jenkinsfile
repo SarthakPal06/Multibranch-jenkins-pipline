@@ -12,7 +12,8 @@ pipeline {
             }
         }
         stage('Deploy Docker Container') {
-            steps {
+            steps { 
+                sh 'docker rm -f myapp_prod || true'
                 sh 'docker run -d -p 8081:80 --name myapp_prod myapp:prod'
             }
         }
